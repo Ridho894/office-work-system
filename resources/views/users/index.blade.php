@@ -8,6 +8,13 @@
     </div>
     <div class="row">
         <div class="card mx-auto">
+          <div>
+            @if (session()->has('message'))
+                <div class="alert alert-success">
+                  {{ session('message') }}
+                </div>
+            @endif
+          </div>
             <div class="card-header">
                 <a href="{{ route('users.create') }}" class="float-right">Create</a>
             </div>

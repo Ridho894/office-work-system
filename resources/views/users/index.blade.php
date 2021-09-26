@@ -34,7 +34,9 @@
                             <th scope="row">{{ $user->id }}</th>
                             <td>{{ $user->username }}</td>
                             <td>{{ $user->email }}</td>
-                            <td>Edit/Delete</td>
+                            <td>
+                              <a href="{{ route('users.edit', $user->id) }}" class="btn btn-success">Edit</a>
+                            </td>
                         </tr>
                       @endforeach
                     </tbody>

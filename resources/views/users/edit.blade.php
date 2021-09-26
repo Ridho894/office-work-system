@@ -78,6 +78,11 @@
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Update User') }}
                                     </button>
+                                    <form action="{{ route('users.destroy', $user->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger">Delete {{ $user->username }}</button>
+                                    </form>
                                 </div>
                             </div>
                         </form>

@@ -87,8 +87,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        if (auth()->user()->id == $user->id) {
+            return redirect()->route('users.index')->with('message', 'You are deleting yourself.');
+        }
+        $user->delete();
+        return redirect()->route('users.index')->with('message', 'User Deleted Succesfully');
     }
 }

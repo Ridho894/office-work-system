@@ -5,16 +5,16 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Users</h1>
+        <div>
+          @if (session()->has('message'))
+              <div class="alert alert-success">
+                {{ session('message') }}
+              </div>
+          @endif
+        </div>
     </div>
     <div class="row">
         <div class="card mx-auto">
-          <div>
-            @if (session()->has('message'))
-                <div class="alert alert-success">
-                  {{ session('message') }}
-                </div>
-            @endif
-          </div>
             <div class="card-header">
                 <a href="{{ route('users.create') }}" class="float-right">Create</a>
             </div>
